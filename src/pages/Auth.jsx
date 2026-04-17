@@ -1,13 +1,13 @@
-import { useContext, useState } from 'react'
+import { useState } from 'react'
 import {useForm} from "react-hook-form"
-import { AuthContext } from "../context/AuthContext"
+import { useAuth } from "../context/AuthContext"
 import { useNavigate } from 'react-router-dom'
 
 export default function Auth() {
 
   const [mode,setMode] = useState("signup");
   const [error, setError] = useState(null);
-  const {signUp, login} = useContext(AuthContext)
+  const {signUp, login} = useAuth();
   
   const navigate = useNavigate()
   const {register, handleSubmit, formState: {errors}} = useForm()
@@ -71,12 +71,12 @@ export default function Auth() {
             {mode === "signup" ? (
               <p>
                 Already have an account? {""} 
-                <span className='auth-link' onClick={() => setMode("login") } >Login</span>
+                <button className='auth-link' onClick={() => setMode("login") } >Login</button>
               </p>
             ):(
               <p>
                 Don't have an account? {""} 
-                <span className='auth-link' onClick={() => setMode("signup")} >Sign up</span>
+                <button className='auth-link' onClick={() => setMode("signup")} >Sign up</button>
               </p>
             )}
           </div>
