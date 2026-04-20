@@ -1,37 +1,53 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
+import styles from "./Navbar.module.css"
+import { FaShoppingCart } from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
 
 
 export default function Navbar() {
 
   const {user, logout} = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+  const isAuthPage = location.pathname === "/auth";
 
   function handleLogout() {
     logout();
     navigate("/auth");
   }
 
+  if (isAuthPage){
+    return(
+      <nav className={styles.navbar}>
+        <div>
+          <h2>WebShop</h2>
+        </div>
+      </nav>
+    )
+  }
+
   return (
-    <nav className='navbar'>
-      <div className='navbar-container'>
+    <nav className={styles.navbar}>
+      <div className={styles.navbarContainer}>
 
-        <Link to="/" className='navbar-brand' >ShopHub</Link>
+        <Link className={styles.navbarLinkHome} to="/">WebShop</Link>
 
-        <div className='navbar-link'> 
-          <Link to="/">Home</Link>
-          <Link to="/checkout">Cart</Link>
+        <div className={styles.navbarLinks}> 
+          <Link to="/">  <FaHome /> Home</Link>
+          <Link to="/checkout"> <FaShoppingCart /> Cart</Link>
         </div>
 
-        <div className='navbar-auth'>
+        <div>
 
-          { !user ? <div className='navbar-auth-link'>
-            <Link to="/auth">Login</Link>
+          { !user ? <div>
+            <Link to="/auth">Login</Link> 
             <Link to="/auth">Signup</Link>
           </div> : (
             <div>
-              <span>Hello, {user.email} </span>
-              <button onClick={handleLogout}>Logout</button> 
+              <span> <FaUser /> Hello, {user.email} </span>
+              <button className={styles.navbarButton} onClick={handleLogout}>Logout</button> 
             </div>
           )}
 

@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar{
+    background-color: #f5f5f7;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.navbarContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbarLinkHome{
+   text-decoration: none;
+   font-weight: 600;
+   font-size: 25px;
+   color: rgb(59, 59, 59);
+}
+
+.navbarLinks a {
+   padding: 20px;
+   position: relative;
+   text-decoration: none;
+   font-weight: 200;
+   font-size: 16px;
+   color: rgb(59, 59, 59);
+}
+
+.navbarButton {
+    margin-left: 10px;
+    padding: 3px;
+    background: rgb(59, 102, 181);
+    color: whitesmoke;
+    border-radius: 4px;
+    border: none;
+}
+.navbarButton:hover{
+  background-color: rgb(45, 85, 160);
+  cursor: pointer;
+}
