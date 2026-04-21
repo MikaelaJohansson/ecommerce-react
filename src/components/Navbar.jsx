@@ -4,6 +4,7 @@ import styles from "./Navbar.module.css"
 import { FaShoppingCart } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import { FaHome } from "react-icons/fa";
+import logo from "../assets/logo.png";
 
 
 export default function Navbar() {
@@ -22,7 +23,7 @@ export default function Navbar() {
     return(
       <nav className={styles.navbar}>
         <div>
-          <h2>WebShop</h2>
+          <img src={logo} alt="Logo" width={200} />
         </div>
       </nav>
     )
@@ -32,7 +33,7 @@ export default function Navbar() {
     <nav className={styles.navbar}>
       <div className={styles.navbarContainer}>
 
-        <Link className={styles.navbarLinkHome} to="/">WebShop</Link>
+        <Link className={styles.navbarLinkHome} to="/"><img src={logo} alt="Logo" width={200}/></Link>
 
         <div className={styles.navbarLinks}> 
           <Link to="/">  <FaHome /> Home</Link>

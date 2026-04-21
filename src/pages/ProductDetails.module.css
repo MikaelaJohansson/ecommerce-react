@@ -1,0 +1,21 @@
+
+.detailContainer {
+  display: flex;
+  border: 1px solid black;
+}
+
+.detailInfo{
+    padding: 15px;
+}
+
+.detailInfo h1{
+    margin-bottom: 40px;
+}
+
+.detailInfo p{
+    padding-top: 10px;
+}
+
+.detailInfo button{
+    margin-top: 120px;
+}

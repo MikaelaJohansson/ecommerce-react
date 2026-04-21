@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { getProductById } from '../data/products';
 import ProductCard from '../components/ProductCard';
 import { useCart } from '../context/CartContext';
+import styles from "./ProductDetails.module.css"
 
 export default function ProductDetails() {
 
@@ -35,24 +36,35 @@ export default function ProductDetails() {
   const productQuantityLabel = productInCart ? `(${productInCart.quantity})` : "";
 
   return (
-    <div>
+   
+    <div className={styles.detailContainer}>
       <div>
+        <img src={product.image} alt={product.name}/>
+      </div>
+      <div className={styles.detailInfo}>
+        <h1>{product.name}</h1>
+        <p>{product.details.brand}</p>
+        <p>${product.price}</p>
+        <p>{product.description}</p>
+
         <div>
+          <p>
+            {product.details.battery}
+            {product.details.bluetooth}
+            {product.details.weight}
+            {product.details.audio}
+            {product.details.extra}
+          </p>
+        </div>
+        <button onClick={() => addToCart(product.id)}>Add to cart {productQuantityLabel}</button>
 
-          <div>
-            <img src={product.image} alt={product.name}/>
-          </div>
-
-          <div>
-            <h1>{product.name}</h1>
-            <p>{product.price}</p>
-            <p>{product.description}</p>
-            <button onClick={() => addToCart(product.id)}>Add to cart {productQuantityLabel}</button>
-          </div>
-
+        <div>
+          {product.shipping.warranty} 
+          {product.shipping.freeShipping}
         </div>
       </div>
     </div>
+    
   )
   
 }
