@@ -1,21 +1,83 @@
-
+.detailMain{
+    display: flex;
+    justify-content: center;
+}
 .detailContainer {
   display: flex;
-  border: 1px solid black;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background-color: white;
+  padding: 10px;
+  border: 1px solid rgb(224, 224, 224);
+  margin-top: 50px;
+  max-width: max-content;
 }
 
-.detailInfo{
+.detailTextContainer{
     padding: 15px;
+    display: flex;
+    flex-direction: column;
+    top: -70px;
+    position: relative;
+   
 }
 
-.detailInfo h1{
-    margin-bottom: 40px;
+.detailTextNew{
+    color: #3f82f6;
+    font-weight: 500;
 }
 
-.detailInfo p{
+.detailTextTopPrice{
+    font-size: 25px;
+}
+
+.detailTextTop{
     padding-top: 10px;
 }
 
-.detailInfo button{
-    margin-top: 120px;
+.detailTextbottom{
+  margin-top: 15px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid rgb(226, 223, 223);
+  border-bottom: 1px solid rgb(226, 223, 223);
+  background-color: #fdfdfe;
+}
+
+.detailTextbottomContainer{
+    display: flex;
+}
+
+.detailTextbottomContant{
+    padding: 6px;
+    text-align: left;
+   
+}
+
+.detailTextContainer h1{
+    font-size: 40px;
+    color: rgb(45, 45, 45);
+}
+
+.detailTextContainer button{
+    background-color: #3f82f6;
+    padding: 9px;
+    border: none;
+    border-radius: 3px;
+    color: whitesmoke;
+    font-weight: 600;
+}
+
+.detailTextbottomWarranty{
+    display: flex;
+    padding-top: 20px;
+    gap: 10px;
+}
+
+.detailTextbottomWarrantyDiv{
+    border-right: 2px solid rgb(187, 186, 186) ;
+    padding-right: 20px;
+   
 }
