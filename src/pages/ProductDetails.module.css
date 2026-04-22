@@ -11,32 +11,27 @@
   padding: 10px;
   border: 1px solid rgb(224, 224, 224);
   margin-top: 50px;
-  max-width: max-content;
+  max-width: min-content;
 }
 
-.detailTextContainer{
+.detailAllContentContainer{
     padding: 15px;
     display: flex;
     flex-direction: column;
-    top: -70px;
+    top: -30px;
     position: relative;
-   
 }
 
-.detailTextNew{
-    color: #3f82f6;
+.detailTexContentNew{
+    color: #316ed7;
     font-weight: 500;
 }
 
-.detailTextTopPrice{
+.detailTexContentPrice{
     font-size: 25px;
 }
 
-.detailTextTop{
-    padding-top: 10px;
-}
-
-.detailTextbottom{
+.detailTextBottomMidSectionContainer{
   margin-top: 15px;
   margin-bottom: 50px;
   display: flex;
@@ -46,38 +41,49 @@
   background-color: #fdfdfe;
 }
 
-.detailTextbottomContainer{
+.detailTextBottomMidSection{
     display: flex;
-}
-
-.detailTextbottomContant{
-    padding: 6px;
+    gap: 5px;
+    padding: 10px;
     text-align: left;
-   
 }
 
-.detailTextContainer h1{
-    font-size: 40px;
-    color: rgb(45, 45, 45);
+.detailTextContainerButton{
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
 }
 
-.detailTextContainer button{
-    background-color: #3f82f6;
+.detailTextContainerButtonAdd{
+    background-color: rgb(59, 102, 181);
     padding: 9px;
     border: none;
     border-radius: 3px;
     color: whitesmoke;
     font-weight: 600;
+    width: 260px;
+    cursor: pointer;
+}
+
+.detailTextContainerButtonCart{
+    background-color: rgb(252, 253, 255);
+    padding: 9px;
+    border: 1px solid  #859ecb;
+    border-radius: 3px;
+    color:  rgb(59, 102, 181);
+    font-weight: 600;
+    width: 260px;
+    cursor: pointer;
 }
 
 .detailTextbottomWarranty{
     display: flex;
-    padding-top: 20px;
+    padding-top: 50px;
     gap: 10px;
+    margin-left: 70px;
 }
 
 .detailTextbottomWarrantyDiv{
     border-right: 2px solid rgb(187, 186, 186) ;
     padding-right: 20px;
-   
 }

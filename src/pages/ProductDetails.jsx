@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import styles from "./ProductDetails.module.css";
+import ProductCard from '../components/ProductCard';
+import Checkout from "../pages/Checkout";
+import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { getProductById } from '../data/products';
-import ProductCard from '../components/ProductCard';
 import { useCart } from '../context/CartContext';
-import styles from "./ProductDetails.module.css";
 import { FaBluetoothB, } from "react-icons/fa";
 import { LuBatteryFull,LuVolume2,LuShoppingCart, LuShieldCheck,LuTruck } from "react-icons/lu";
 
@@ -12,10 +13,8 @@ export default function ProductDetails() {
   const {id} = useParams();
   const [product, setProduct] = useState(null)
   const navigate = useNavigate();
-
   const {addToCart, cartItems} = useCart()
  
-
   useEffect(() => {
 
     const foundProduct = getProductById(id);
@@ -42,59 +41,62 @@ export default function ProductDetails() {
     <div className={styles.detailMain}>
       <div className={styles.detailContainer}>
 
-          <div>
-            <img src={product.image} alt={product.name}/>
-          </div>
-
-          <div className={styles.detailTextContainer}>
-            <p className={styles.detailTextNew}>New!</p>
-
-            <h1>{product.name}</h1>
-
-            <p className={styles.detailTextTop}>
-              <em>{product.details.brand}</em> <br /> 
-              <strong className={styles.detailTextTopPrice}>${product.price}</strong> <br /> <br />
-              {product.description}
-            </p>
-
-            <div className={styles.detailTextbottom}>
-              <div className={styles.detailTextbottomContainer}>
-                <LuBatteryFull />
-                <div className={styles.detailTextbottomContant}>
-                  {product.details.battery} 
-                </div>
-                <FaBluetoothB />
-                <div className={styles.detailTextbottomContant}>
-                  {product.details.bluetooth}
-                </div>
-                <LuVolume2 /> 
-                <div className={styles.detailTextbottomContant}>
-                  {product.details.audio}
-                </div>
-                <div className={styles.detailTextbottomContant}>
-                  {product.details.extra}
-                </div>
-              </div>
-            </div>
-            
-            <button  onClick={() => addToCart(product.id)}><LuShoppingCart /> Add to cart {productQuantityLabel}</button>
-
-            <div className={styles.detailTextbottomWarranty}>
-               <LuShieldCheck />
-              <div className={styles.detailTextbottomWarrantyDiv}>              
-                {product.shipping.warranty} 
-              </div> 
-              <LuTruck />
-              {product.shipping.freeShipping}
-            </div>
-
+        <div>
+          <img src={product.image} alt={product.name}/>
         </div>
 
+        <div className={styles.detailAllContentContainer}>
+
+          <p className={styles.detailTexContentNew}>New!</p>
+
+          <h1>{product.name}</h1>
+
+          <p>
+            <em>{product.details.brand}</em> <br /> 
+            <strong className={styles.detailTexContentPrice}>${product.price}</strong> <br /> <br />
+            {product.description}
+          </p>
+
+          <div className={styles.detailTextBottomMidSectionContainer}>
+
+            <div className={styles.detailTextBottomMidSection}>
+              <LuBatteryFull size={32} />
+              <div className={styles.detailTextBottomMidSection}>
+                {product.details.battery} 
+              </div>
+              <FaBluetoothB size={20}  />
+              <div className={styles.detailTextBottomMidSection}>
+                {product.details.bluetooth}
+              </div>
+              <LuVolume2 size={32} /> 
+              <div className={styles.detailTextBottomMidSection}>
+                {product.details.audio}
+              </div>
+              <div className={styles.detailTextBottomMidSection}>
+                {product.details.extra}
+              </div>
+            </div>
+
+          </div>
+
+          <span  className={styles.detailTextContainerButton}>
+            <button  className={styles.detailTextContainerButtonAdd}  onClick={() => addToCart(product.id)}><LuShoppingCart /> Add to cart {productQuantityLabel}</button>
+            <button  className={styles.detailTextContainerButtonCart} onClick={() => navigate("/checkout")}>View cart</button>
+          </span>
+
+          <div className={styles.detailTextbottomWarranty}>
+              <LuShieldCheck />
+            <div className={styles.detailTextbottomWarrantyDiv}>              
+              {product.shipping.warranty} 
+            </div> 
+            <LuTruck />
+            {product.shipping.freeShipping}
+          </div>
+
+        </div>
       </div>
     </div>
-    
   )
-  
 }
 
 
