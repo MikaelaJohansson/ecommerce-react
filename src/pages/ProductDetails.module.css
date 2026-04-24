@@ -1,4 +1,4 @@
-.detailMain{
+.detailMainContainer{
     display: flex;
     justify-content: center;
 }
@@ -20,6 +20,10 @@
     flex-direction: column;
     top: -30px;
     position: relative;
+}
+
+.detailAllContentContainer h1{
+    color: #213557;
 }
 
 .detailTexContentNew{

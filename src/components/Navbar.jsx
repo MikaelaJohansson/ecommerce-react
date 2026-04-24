@@ -30,7 +30,7 @@ export default function Navbar() {
   }
 
   return (
-    <nav className={styles.navbar}>
+    <nav className={styles.navbarMainContainer}>
       <div className={styles.navbarContainer}>
 
         <Link className={styles.navbarLinkHome} to="/"><img src={logo} alt="Logo" width={200}/></Link>

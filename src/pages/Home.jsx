@@ -2,13 +2,14 @@ import React from 'react'
 import { getProducts } from '../data/products'
 import { Link } from 'react-router-dom'
 import ProductCard from '../components/ProductCard'
+import styles from './Home.module.css'
 
 export default function Home() {
 
   const products = getProducts()
 
   return (
-    <div>
+    <div className={styles.homeMainContainer}>
 
       <div className='herosection'>
         <h1>Welcome to ShopHub</h1>

@@ -6,7 +6,7 @@ import logo from "../assets/logo.png";
 
 export default function Footer() {
   return (
-    <div className={styles.footerContainer}>
+    <div className={styles.footerMainContainer}>
         <div className={styles.footerContent}>
             <div>
                 <img className={styles.footerLogo} src={logo}  alt="Logo" width={150} />              

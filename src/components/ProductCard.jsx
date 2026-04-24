@@ -1,5 +1,7 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
+import styles from "./ProductCard.module.css"
+
 
 export default function ProductCard({product}) {
 
@@ -7,17 +9,29 @@ export default function ProductCard({product}) {
   const productInCart = cartItems.find((item) => item.id === product.id)
   const productQuantityLabel = productInCart ? `(${productInCart.quantity})` : "";
 
+ 
+
   return (
-    <div className='product-card'>
-        <img src = {product.image} alt={product.name}/>
-        <div className='product-card-content'>
+    <div className={styles.ProductCardMainContainer}>
+
+      <Link to={`/products/${product.id}`}>
+        <img src = {product.image} alt={product.name} width={300}/>
+      </Link>
+
+     
+
+      <div className={styles.productCardContent}>
+
         <h3>{product.name}</h3>
         <p>${product.price}</p>
+
         <div>
-            <Link to={`/products/${product.id}`}>View Details</Link>
-            <button onClick={() => addToCart(product.id)}>Add to Cart {productQuantityLabel} </button>
+          <button className={styles.productCardButtonsDetailView}><Link to={`/products/${product.id}`}>View Details</Link></button>
+          <button className={styles.productCardButtonsAddToCart} onClick={() => addToCart(product.id)}>Add to Cart {productQuantityLabel} </button>
         </div>
-        </div>             
+
+      </div>           
+
     </div>
   )
 }

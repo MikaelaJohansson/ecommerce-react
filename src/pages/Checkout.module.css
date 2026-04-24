@@ -1,8 +1,16 @@
-.CheckoutMain{
+.CheckoutMainContainer{
    display: flex;
    flex-direction: column;
    align-items: center;
    margin-top: 30px;
+}
+
+.CheckoutMain h1{
+    align-self: flex-start;
+    color: #213557;
+    padding-bottom: 20px;
+    font-style: italic;
+    font-size:25px;
 }
 
 .CheckoutContainer{
@@ -14,29 +22,25 @@
 
 .CheckoutProductsInCart{
    display: grid;
-   grid-template-columns: 150px 1fr 240px 40px;
+   grid-template-columns: 160px 1fr 240px 40px;
    align-items: center;
-   column-gap: 24px;
-   border-bottom: 1px solid rgb(217, 217, 217);
    background-color: #f9f9fb;
-}
-
-.CheckoutProductsInCart img{
-    border-radius: 2px;
+   box-shadow: 1px 1px 10px 1px rgba(215, 218, 224, 0.848);
 }
 
 .CheckoutImage{
-   width: 150px;
-   height: 150px;
+   width: 130px;
+   height: 130px;
    object-fit: cover;
+   border-radius: 2px;
 }
 
 .CheckoutProductName{
-   font-size: 20px;
+   font-size: 16px;
    text-align: left;
 }
 .CheckoutProductName p{
-    font-size: 15px;
+    font-size: 13px;
 }
 .CheckoutPrice{
    font-size: 15px;
@@ -50,7 +54,7 @@
    gap: 20px;
    font-style: italic;
    font-weight: 600;
-   font-size: 15px;
+   font-size: 13px;
    color: black;
 }
 

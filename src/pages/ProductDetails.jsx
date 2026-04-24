@@ -38,7 +38,7 @@ export default function ProductDetails() {
 
   return (
    
-    <div className={styles.detailMain}>
+    <div className={styles.detailMainContainer}>
       <div className={styles.detailContainer}>
 
         <div>
