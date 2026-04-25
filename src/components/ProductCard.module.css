@@ -60,3 +60,7 @@ a {
     background-color: rgb(41, 75, 137);
     cursor: pointer;
 }
+
+.productInCartIcon{
+    margin-right: 5px;
+}

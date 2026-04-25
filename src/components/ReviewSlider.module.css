@@ -1,0 +1,70 @@
+.ReviewSliderMainContainer{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.ReviewSliderMainContainer h2{
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    margin-top: 90px;
+    color: #213557;
+}
+
+.ReviewSliderCarusell{
+    display: flex;
+    gap: 20px;
+    margin-bottom: 100px;
+    padding: 10px;
+}
+
+.ReviewCard{
+    width: 320px;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.ReviewHeader{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.ReviewImage{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.ReviewControls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.ReviewControls button {
+  width: 31px;
+  height: 31px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid #406fc0;
+  background-color: white;
+  color: #406fc0;
+  font-size: 29px;
+  cursor: pointer;
+  box-shadow: 1px 2px 5px 1px rgb(223, 222, 222);
+  line-height: 1;
+  position: relative;
+  top: -50px;
+}
+.ReviewControls button:hover{
+    transform: scale(1.03);
+}

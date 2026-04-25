@@ -1,6 +1,7 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
 import styles from "./ProductCard.module.css"
+import { LuShoppingCart, } from "react-icons/lu";
 
 
 export default function ProductCard({product}) {
@@ -27,7 +28,7 @@ export default function ProductCard({product}) {
 
         <div>
           <button className={styles.productCardButtonsDetailView}><Link to={`/products/${product.id}`}>View Details</Link></button>
-          <button className={styles.productCardButtonsAddToCart} onClick={() => addToCart(product.id)}>Add to Cart {productQuantityLabel} </button>
+          <button className={styles.productCardButtonsAddToCart} onClick={() => addToCart(product.id)}> <LuShoppingCart className={styles.productInCartIcon} />Add to Cart {productQuantityLabel} </button>
         </div>
 
       </div>           
