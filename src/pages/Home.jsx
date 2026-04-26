@@ -44,8 +44,8 @@ export default function Home() {
         </div>
       </div>
 
-      <div>
-        <ReviewSlider></ReviewSlider>
+      <div className={styles.HomeProductsOffer}>
+          <ReviewSlider></ReviewSlider>
       </div>
 
     </div>

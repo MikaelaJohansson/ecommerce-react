@@ -16,19 +16,25 @@
 }
 
 .productCardContent{
-    padding: 20px;
+    padding-bottom: 30px;
     color: #213557;
     font-style: italic;
 }
 
-.productCardContent h3{
+.productCardContent h3 {
     font-weight: 900;
-    font-size: 21px;
+    font-size: 17px;
+    padding: 10px;
+}
+
+.productCardContent p{
+    padding-left: 10px;
 }
 
 .productCardButtonsDetailView{
     margin-top: 20px;
     margin-right: 10px;
+    margin-left: 10px;
     padding: 8px;
     border: 1px solid rgb(59, 102, 181);
     border-radius: 3px;

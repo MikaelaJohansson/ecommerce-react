@@ -1,10 +1,27 @@
+import headphones from "../assets/headphones.jpg";
+import Smartwatchproducts from "../assets/Smartwatchproducts.jpg";
+import laptop from "../assets/laptop.jpg";
+import MechanicalKeyboard from "../assets/MechanicalKeyboard.jpg";
+import GamingMouse from "../assets/GamingMouse.jpg";
+import BluetoothSpeaker from "../assets/BluetoothSpeaker.jpg";
+import Monitor from "../assets/Monitor.jpg";
+import USBHub from "../assets/USBHub.jpg";
+import WebcamHD from "../assets/WebcamHD.jpg";
+import WirelessCharger from "../assets/WirelessCharger.jpg";
+import officechair from "../assets/officechair.jpg";
+import ExternalSSD from "../assets/ExternalSSD.jpg";
+import SmartphoneStand from "../assets/SmartphoneStand.jpg";
+import Earbuds from "../assets/Earbuds.jpg";
+import Lamp from "../assets/Lamp.jpg";
+
+
 const products = [
   {
     id: 1,
     name: "Wireless Headphones",
     price: 99.99,
     image:
-      "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=500&h=500&fit=crop", 
+      headphones, 
     description:
       "Premium wireless headphones with noise cancellation and long battery life.",
     category: "audio",
@@ -27,7 +44,7 @@ const products = [
     name: "Smart Watch",
     price: 249.99,
     image:
-      "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=500&h=500&fit=crop",
+      Smartwatchproducts,
     description:
       "Feature-rich smartwatch with fitness tracking, heart rate monitor, and notifications.",
     category: "wearables",
@@ -50,7 +67,7 @@ const products = [
     name: "Laptop Stand",
     price: 49.99,
     image:
-      "https://images.unsplash.com/photo-1629317480826-910f729d1709?w=500&h=500&fit=crop",
+      laptop,
     description:
       "Adjustable laptop stand for a more ergonomic and comfortable workspace.",
     category: "accessories",
@@ -73,7 +90,7 @@ const products = [
     name: "Mechanical Keyboard",
     price: 129.99,
     image:
-      "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?w=500&h=500&fit=crop",
+      MechanicalKeyboard,
     description:
       "Responsive mechanical keyboard with tactile switches and clean design.",
     category: "computer",
@@ -96,7 +113,7 @@ const products = [
     name: "Gaming Mouse",
     price: 59.99,
     image:
-      "https://images.unsplash.com/photo-1527814050087-3793815479db?w=500&h=500&fit=crop",
+    GamingMouse,
     description:
       "Ergonomic gaming mouse with high precision sensor and customizable buttons.",
     category: "computer",
@@ -119,7 +136,7 @@ const products = [
     name: "Bluetooth Speaker",
     price: 79.99,
     image:
-      "https://images.unsplash.com/photo-1507878566509-a0dbe19677a5?w=500&h=500&fit=crop",
+    BluetoothSpeaker,
     description:
       "Portable Bluetooth speaker with rich sound and strong battery performance.",
     category: "audio",
@@ -142,7 +159,7 @@ const products = [
     name: "4K Monitor",
     price: 399.99,
     image:
-      "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500&h=500&fit=crop",
+      Monitor,
     description: "Ultra HD monitor with stunning clarity and color accuracy.",
     category: "computer",
     details: {
@@ -164,7 +181,7 @@ const products = [
     name: "USB-C Hub",
     price: 39.99,
     image:
-      "https://images.unsplash.com/photo-1616578273461-3a99ce422de6?w=500&h=500&fit=crop",
+      USBHub,
     description:
       "Expand your laptop with multiple ports using a single USB-C connection.",
     category: "accessories",
@@ -187,7 +204,7 @@ const products = [
     name: "Webcam HD",
     price: 89.99,
     image:
-      "https://images.unsplash.com/photo-1623949556303-b0d17d198863?w=500&h=500&fit=crop",
+      WebcamHD,
     description: "High-definition webcam for streaming and video calls.",
     category: "computer",
     details: {
@@ -209,7 +226,7 @@ const products = [
     name: "Wireless Charger",
     price: 29.99,
     image:
-      "https://images.unsplash.com/photo-1633381638729-27f730955c23?w=500&h=500&fit=crop",
+      WirelessCharger,
     description: "Fast wireless charging pad for compatible devices.",
     category: "accessories",
     details: {
@@ -231,7 +248,7 @@ const products = [
     name: "office chair",
     price: 199.99,
     image:
-      "https://images.unsplash.com/photo-1688578735427-994ecdea3ea4?w=500&h=500&fit=crop",
+      officechair,
     description: "Comfortable gaming chair with ergonomic support.",
     category: "furniture",
     details: {
@@ -253,7 +270,7 @@ const products = [
     name: "External SSD",
     price: 149.99,
     image:
-      "https://images.unsplash.com/photo-1577538926210-fc6cc624fde2?w=500&h=500&fit=crop",
+      ExternalSSD,
     description: "High-speed external SSD for fast data transfer.",
     category: "computer",
     details: {
@@ -274,7 +291,7 @@ const products = [
     id: 13,
     name: "Smartphone Stand",
     price: 19.99,
-    image: "https://images.unsplash.com/photo-1760443728221-0feabf5a0130?w=500&h=500&fit=crop",
+    image: SmartphoneStand,
     description: "Minimalist stand for smartphones.",
     category: "accessories",
     details: {
@@ -296,7 +313,7 @@ const products = [
     name: "Noise Cancelling Earbuds",
     price: 119.99,
     image:
-      "https://images.unsplash.com/photo-1505236273191-1dce886b01e9?w=500&h=500&fit=crop",
+      Earbuds,
     description: "True wireless earbuds with noise cancellation.",
     category: "audio",
     details: {
@@ -317,7 +334,7 @@ const products = [
     id: 15,
     name: "Desk Lamp LED",
     price: 34.99,
-    image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=500&h=500&fit=crop",
+    image: Lamp,
     description: "LED desk lamp with adjustable brightness.",
     category: "furniture",
     details: {

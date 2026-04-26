@@ -28,6 +28,10 @@
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
+.ReviewCard{
+    font-size: 13px;
+}
+
 .ReviewHeader{
     display: flex;
     align-items: center;

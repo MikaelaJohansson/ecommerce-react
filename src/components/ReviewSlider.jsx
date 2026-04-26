@@ -25,38 +25,34 @@ export default function ReviewSlider() {
 
       <h2>Customer Review</h2>
 
-      {/* 🔥 HÄR ÄR NYA WRAPPERN */}
         <div className={styles.ReviewControls}>
 
-            {/* vänster knapp */}
-            <button onClick={handlePrev}>‹</button>
+          <button onClick={handlePrev}>‹</button>
 
-            {/* din carousel */}
-            <div className={styles.ReviewSliderCarusell}>
-                {visibleReviews.map((review) => (
-                    <div className={styles.ReviewCard} key={review.id}>
+          <div className={styles.ReviewSliderCarusell}>
+            {visibleReviews.map((review) => (
+              <div className={styles.ReviewCard} key={review.id}>
 
-                        <div className={styles.ReviewHeader}>
-                            <img
-                            className={styles.ReviewImage}
-                            src={review.image}
-                            alt={review.name}
-                            />
+                <div className={styles.ReviewHeader}>
+                  <img
+                  className={styles.ReviewImage}
+                  src={review.image}
+                  alt={review.name}
+                  />
 
-                            <div>
-                                <h3>{review.name}</h3>
-                                <p>{"⭐".repeat(review.rating)}</p>
-                            </div>
-                        </div>
+                  <div>
+                      <h3>{review.name}</h3>
+                      <p>{"⭐".repeat(review.rating)}</p>
+                  </div>
+                </div>
 
-                        <p>{review.text}</p>
+                <p>{review.text}</p>
 
-                    </div>
-                ))}
-            </div>
+              </div>
+            ))}
+          </div>
 
-            {/* höger knapp */}
-            <button onClick={handleNext}>›</button>
+          <button onClick={handleNext}>›</button>
 
         </div>
     </div>

@@ -16,7 +16,7 @@ export default function ProductCard({product}) {
     <div className={styles.ProductCardMainContainer}>
 
       <Link to={`/products/${product.id}`}>
-        <img src = {product.image} alt={product.name} width={300}/>
+        <img src = {product.image} alt={product.name} width={250}/>
       </Link>
 
      
