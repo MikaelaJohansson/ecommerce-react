@@ -77,15 +77,15 @@ export default function ProductDetails() {
             <div className={styles.detailTextBottomMidSection}>
               
               <div className={styles.detailTextBottomMidSection}>
-                <LuBatteryFull size={32} color="rgb(59, 102, 181)" />{product.details.battery} 
+                <LuBatteryFull size={29} color="rgb(59, 102, 181)" />{product.details.battery} 
               </div>
            
               <div className={styles.detailTextBottomMidSection}>
-                  <FaBluetoothB size={24} color="rgb(59, 102, 181)" /> {product.details.bluetooth}
+                  <FaBluetoothB size={23} color="rgb(59, 102, 181)" /> {product.details.bluetooth}
               </div>
               
               <div className={styles.detailTextBottomMidSection}>
-                <LuVolume2 size={32} color="rgb(59, 102, 181)" /> {product.details.audio}
+                <LuVolume2 size={28} color="rgb(59, 102, 181)" /> {product.details.audio}
               </div>
               <div className={styles.detailTextBottomMidSection}>
                 {product.details.extra}

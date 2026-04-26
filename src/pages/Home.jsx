@@ -24,12 +24,23 @@ export default function Home() {
         /> 
 
         <div className={styles.HomeHeroSectionInfo}>
-          <h1>Welcome to ShopHub</h1>
-          <p>
-            At ElectroShop, we bring you the latest in modern technology with a focus on quality, performance, and design. 
-            From smartwatches and audio devices to everyday tech essentials, our products are carefully selected to give you 
-            the best experience at competitive prices. Discover reliable electronics built to fit your lifestyle.
+          <p className={styles.eyebrow}>New arrivals in tech</p>
+
+          <h1>Welcome to ElectroShop</h1>
+
+          <p className={styles.tagline}>
+            Smart electronics for modern everyday life.
           </p>
+
+          <p className={styles.description}>
+            Discover carefully selected smartwatches, audio devices, accessories, and tech essentials designed for performance, style, and reliability.
+          </p>
+          <br />
+          <div className={styles.highlightBox}>
+            <p><strong>Summer Sale</strong></p>
+            <p>Up to 40% off selected products</p>
+          </div>
+          <br />
         </div>
             
       </div>
