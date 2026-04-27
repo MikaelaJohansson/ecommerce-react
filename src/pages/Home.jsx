@@ -47,9 +47,9 @@ export default function Home() {
 
       {/* Renders a list of product cards */}
       <section className={styles.HomeProductsSection}>
-        <h2 className={styles.HomeProductsHead}>Products</h2>
         <div className={styles.HomeProducts}>
-          
+          <h2 className={styles.HomeProductsHead}>Products</h2>
+
           {products.map((product) => (
             <ProductCard product={product} key={product.id}/>           
           ))}

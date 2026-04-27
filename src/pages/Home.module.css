@@ -71,19 +71,20 @@
   box-sizing: border-box;
   padding: 70px 80px;
 }
-
-.HomeProductsHead {
-  font-size: 32px;
-  color: #213557;
-  margin-bottom: 10px;
-  padding-left: 10px;
-}
-
 .HomeProducts {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 300px));
   gap: 30px;
-  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.HomeProductsHead {
+  grid-column: 1 / -1;
+  margin-bottom: 0;
+  font-size: 32px;
+  color: #213557;
 }
 
 .HomeProductsOffer{
