@@ -8,44 +8,45 @@ import ReviewSlider from '../components/ReviewSlider'
 
 export default function Home() {
 
+  // Retrieves all products from the mock data source
   const products = getProducts()
-  
 
 
   return (
-    <div className={styles.homeMainContainer}>
+    <main className={styles.homeMainContainer}>
           
-      <div className={styles.HomeHeroSection}>
-
+      <section className={styles.HomeHeroSection}>
         <img 
           className={styles.HomeHeroImg} 
           src={smartwatch} 
           alt="Smartwatch" 
         /> 
 
+        {/* Hero section displaying featured content and promotional information */}
         <div className={styles.HomeHeroSectionInfo}>
+
           <p className={styles.eyebrow}>New arrivals in tech</p>
-
           <h1>Welcome to ElectroShop</h1>
-
-          <p className={styles.tagline}>
+          <p>
             Smart electronics for modern everyday life.
           </p>
-
-          <p className={styles.description}>
+          <p>
             Discover carefully selected smartwatches, audio devices, accessories, and tech essentials designed for performance, style, and reliability.
           </p>
           <br />
-          <div className={styles.highlightBox}>
-            <p><strong>Summer Sale</strong></p>
-            <p>Up to 40% off selected products</p>
-          </div>
           <br />
-        </div>
-            
-      </div>
 
-      <div className={styles.HomeProductsSection}>
+          <section>
+            <p><strong className={styles.HomeHeroSectionInfoSale}>Sale This Week</strong></p>
+            <p>Save up to <strong className={styles.HomeHeroSectionInfoProcent}>40% </strong>on selected products</p>
+          </section>
+
+          <br />
+        </div>           
+      </section>
+
+      {/* Renders a list of product cards */}
+      <section className={styles.HomeProductsSection}>
         <h2 className={styles.HomeProductsHead}>Products</h2>
         <div className={styles.HomeProducts}>
           
@@ -53,12 +54,13 @@ export default function Home() {
             <ProductCard product={product} key={product.id}/>           
           ))}
         </div>
-      </div>
+      </section>
 
-      <div className={styles.HomeProductsOffer}>
-          <ReviewSlider></ReviewSlider>
-      </div>
+      {/* Displays customer reviews in a slider */}    
+      <section className={styles.HomeProductsOffer}>
+        <ReviewSlider></ReviewSlider>
+      </section>
 
-    </div>
+    </main>
   )
 }

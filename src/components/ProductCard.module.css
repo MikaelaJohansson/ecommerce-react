@@ -30,15 +30,23 @@
 .productCardContent p{
     padding-left: 10px;
 }
-
+.productCardButtons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 .productCardButtonsDetailView{
-    margin-top: 20px;
-    margin-right: 10px;
-    margin-left: 10px;
-    padding: 8px;
+    margin-top: 10px;
+    padding: 7px;
+    margin-right: 5px;
+    border-radius: 3px;
     border: 1px solid rgb(59, 102, 181);
     border-radius: 3px;
     text-decoration: none;
+    font-size: 14px;
+    font-style: normal;
     color:  rgb(59, 102, 181);
     font-weight: 600;
 }

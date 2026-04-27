@@ -6,13 +6,19 @@ import styles from "./Auth.module.css"
 
 export default function Auth() {
 
+  // Controls whether the form is in signup or login mode
   const [mode,setMode] = useState("signup");
+
+  // Stores authentication errors returned from signup or login
   const [error, setError] = useState(null);
+
   const {signUp, login} = useAuth();
-  
   const navigate = useNavigate()
+
+  // Registers form fields and handles validation errors
   const {register, handleSubmit, formState: {errors}} = useForm()
 
+  // Handles signup or login based on the current form mode
   function onSubmit(data){
     setError(null);
 
@@ -23,6 +29,7 @@ export default function Auth() {
       result = login(data.email, data.password)
     }
 
+    // Redirects successful users to the home page, otherwise displays an error
     if(result.success){
       navigate("/");
     }else{
@@ -32,18 +39,19 @@ export default function Auth() {
   }
 
   return (
-    <div className={styles.authMainContainer}>
+    <main className={styles.authMainContainer}>
       
-      <div className={styles.authContantContainer}>
+      <section className={styles.authContantContainer}>
 
         <h1>{mode === "signup" ? "Sign up" : "Login"}</h1>
 
+        {/* Auth form with email and password validation */}
         <form className={styles.authForm} onSubmit={handleSubmit(onSubmit)}>
-          {error && <div>{error}</div>}
+          {error && <div className={styles.error}>{error}</div>}
           <div>
             <label htmlFor='email' >Email</label> <br /> 
             <input type="email" id='email' {...register("email",{required:"Email is required"})} />
-            {errors.email && <span>{errors.email.message}</span>}
+            {errors.email && <span className={styles.error}>{errors.email.message}</span>}
           </div>
           <br />
           <div>
@@ -55,19 +63,20 @@ export default function Auth() {
               {...register
                 ("password",
                   {
-                    required:"password is required", minLength:{value:6, message:"password must be at least 6 characters"},  maxLength:{value:12, message:"password must be less than 12 characters"}
+                    required:"Password is required", minLength:{value:6, message:"Password must be at least 6 characters"},  maxLength:{value:12, message:"Password must be less than 12 characters"}
                   }
                 )
               }            
                   
             />
-            {errors.password && <span>{errors.password.message}</span>}
+            {errors.password && <span className={styles.error}>{errors.password.message}</span>}
           </div>
           <br />
           <button className={styles.authButton} type='submit'>{mode === "signup" ? "Sign up" : "Login"}</button>
 
         </form>
 
+        {/* Allows the user to switch between signup and login mode */}
         <div>
           {mode === "signup" ? (
             <p>
@@ -82,8 +91,8 @@ export default function Auth() {
           )}
         </div>
 
-      </div>
+      </section>
       
-    </div>
+    </main>
   )
 }

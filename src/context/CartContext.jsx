@@ -1,19 +1,23 @@
 import { createContext, useContext, useState, useEffect } from 'react'
 import {getProductById} from "../data/products"
 
+// Creates a global cart context
 const CartContext = createContext(null);
 
 export default function CartProvider({ children }) {
 
+    // Initializes cart state from localStorage to persist cart items after refresh
     const [cartItems, setCartItems] = useState(() => {
         const savedCart = localStorage.getItem("cartItems")
         return savedCart ? JSON.parse(savedCart) : []
     }) //{id:2, quantity:7}
 
+    // Saves cart changes to localStorage whenever cartItems updates
     useEffect(() => {
         localStorage.setItem("cartItems", JSON.stringify(cartItems))
     }, [cartItems])
 
+    // Adds a product to the cart or increases quantity if it already exists
     function addToCart(productId){
 
         const existing = cartItems.find((item) => item.id === productId)
@@ -27,6 +31,7 @@ export default function CartProvider({ children }) {
         
     }
 
+    // Combines cart item data with full product details
     function getCartItemsWithProducts(){
         return cartItems.map(item => ({
             ...item,
@@ -34,10 +39,12 @@ export default function CartProvider({ children }) {
         })).filter(item => item.product);
     }
 
+    // Removes a product from the cart
     function removeFromCart(productId){
         setCartItems(cartItems.filter((item => item.id !== productId)))
     }
 
+    // Updates product quantity or removes the item if quantity reaches zero
     function updateQuantity(productId, quantity){
 
         if(quantity <= 0){
@@ -52,7 +59,8 @@ export default function CartProvider({ children }) {
         );
 
     }
-
+    
+    // Calculates the total cart price based on product price and quantity
     function getCartTotal(){
         const total = cartItems.reduce((total, item) => {
             const product = getProductById(item.id);
@@ -62,11 +70,12 @@ export default function CartProvider({ children }) {
         return total;
     }
 
+    // Removes all items from the cart
     function clearCart(){
         setCartItems([])
     }
 
-
+   {/* Exposes cart state and cart actions to all child components */}
   return (
     <CartContext.Provider value = {{cartItems, addToCart, getCartItemsWithProducts, removeFromCart, updateQuantity, getCartTotal, clearCart}}>
         {children}
@@ -75,9 +84,8 @@ export default function CartProvider({ children }) {
 
 }
 
+// Custom hook to access cart context
 export function useCart(){
-
     const context = useContext(CartContext);
-
     return context
 }

@@ -6,17 +6,16 @@ import logo from "../assets/logo.png";
 
 export default function Footer() {
   return (
-    <div className={styles.footerMainContainer}>
+    <footer className={styles.footerMainContainer}>
         <div className={styles.footerContent}>
             <div>
-                <img className={styles.footerLogo} src={logo}  alt="Logo" width={150} />              
+                <img className={styles.footerLogo} src={logo}  alt="ElectroShop logo" width={150} />              
                 <div className={styles.footerIcons}>
                      <FaFacebookF />
                      <FaInstagram />
                      <FaTwitter />
                      <MdEmail />
-                </div>
-                
+                </div>               
             </div>
 
             <div>
@@ -40,6 +39,6 @@ export default function Footer() {
                 <p>Privacy</p>
             </div>
         </div>
-    </div>
+    </footer>
   )
 }

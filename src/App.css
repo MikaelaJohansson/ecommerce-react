@@ -1,21 +1,11 @@
-.app {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background: linear-gradient(
-    135deg,
-    #e7e7e9cd 0%,
-    #f5f5f7 55%,
-    #e9eaee 60%,
-    #eff0f1dd 100%
-  );
-
-  background-repeat: no-repeat;
-  background-size: cover;
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
 }
 
-html, body, #root {
-  height: 100%;
+body {
   margin: 0;
 }
 
@@ -23,6 +13,16 @@ html, body, #root {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+
+  background: linear-gradient(
+    135deg,
+    #e7e7e9cd 0%,
+    #f5f5f7 55%,
+    #e9eaee 60%,
+    #eff0f1dd 100%
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .mainContent {

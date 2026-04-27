@@ -53,6 +53,19 @@
   color: #555;
 }
 
+.HomeHeroSectionInfoSale{
+  font-weight: 600;
+  color: #213557;
+  font-style: italic;
+  font-size: 27px;
+}
+
+.HomeHeroSectionInfoProcent{
+  font-size: 40px;
+  font-style: italic;
+  color: rgb(40, 39, 39);
+}
+
 .HomeProductsSection {
   width: 100%;
   box-sizing: border-box;

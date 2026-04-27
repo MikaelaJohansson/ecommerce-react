@@ -1,20 +1,50 @@
-# React + Vite
+🚀 Live Demo: https://your-app.netlify.app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# ElectroShop
 
-Currently, two official plugins are available:
+This is an e-commerce web application built with React.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The project was created as a follow-along tutorial based on a YouTube course by PedroTech, with the goal of refreshing and strengthening my React skills.
 
-## React Compiler
+## Purpose
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The main focus of this project was frontend development.  
+To keep the scope simple, the application uses mock data instead of a real backend.
 
-## Expanding the ESLint configuration
+In addition to following the tutorial, I have extended the project with my own improvements, including:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Protected routing (authentication required to access checkout)
+- Additional styling and layout adjustments
+- Improved user flow between pages
 
-# ecommerce-react
+## Features
 
-ecommerce-react
+- Product listing page
+- Product details page
+- Add to cart functionality
+- Checkout page
+- Authentication (signup/login using localStorage)
+- Protected routes (cart requires login)
+
+## Tech Stack
+
+- React (Vite)
+- React Router
+- Context API (Auth & Cart state)
+- CSS Modules
+
+## Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone <your-repo-url>
+npm install
+npm run dev
+```
+
+Open in browser:
+
+```
+http://localhost:5173
+```

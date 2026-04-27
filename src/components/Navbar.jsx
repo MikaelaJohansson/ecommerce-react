@@ -9,21 +9,26 @@ import logo from "../assets/logo.png";
 
 export default function Navbar() {
 
+  // Retrieves the current user and logout function from auth context
   const {user, logout} = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
+
+  // Checks if the user is currently on the auth page
   const isAuthPage = location.pathname === "/auth";
 
+  // Logs the user out and redirects to the auth page
   function handleLogout() {
     logout();
     navigate("/auth");
   }
 
+  {/* Shows a simplified navbar on the auth page, no links */}
   if (isAuthPage){
     return(
-      <nav className={styles.navbar}>
-        <div>
-          <img src={logo} alt="Logo" width={200} />
+      <nav className={styles.navbarMainContainer}>
+        <div className={styles.navbarContainer}>
+          <Link to={"/"}><img src={logo} alt="ElectroShop logo" width={200} /></Link>
         </div>
       </nav>
     )
@@ -33,7 +38,7 @@ export default function Navbar() {
     <nav className={styles.navbarMainContainer}>
       <div className={styles.navbarContainer}>
 
-        <Link className={styles.navbarLinkHome} to="/"><img src={logo} alt="Logo" width={200}/></Link>
+        <Link className={styles.navbarLinkHome} to="/"><img src={logo} alt="ElectroShop logo" width={200}/></Link>
 
         <div className={styles.navbarLinks}> 
           <Link to="/">  <FaHome /> Home</Link>
@@ -42,10 +47,11 @@ export default function Navbar() {
 
         <div>
 
-          { !user ? <div>
-            <Link to="/auth">Login</Link> 
-            <Link to="/auth">Signup</Link>
-          </div> : (
+          { !user ? 
+            <div className={styles.navbarLinks}>
+              <Link to="/auth">Login</Link> 
+              <Link to="/auth">Signup</Link>
+            </div> : (
             <div>
               <span> <FaUser /> Hello, {user.email} </span>
               <button className={styles.navbarButton} onClick={handleLogout}>Logout</button> 

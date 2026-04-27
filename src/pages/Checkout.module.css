@@ -5,12 +5,12 @@
    margin-top: 30px;
 }
 
-.CheckoutMain h1{
+.CheckoutContainer h1{
     align-self: flex-start;
     color: #213557;
     padding-bottom: 20px;
     font-style: italic;
-    font-size:25px;
+    font-size: 30px;
 }
 
 .CheckoutContainer{
@@ -22,10 +22,11 @@
 
 .CheckoutProductsInCart{
    display: grid;
-   grid-template-columns: 160px 1fr 240px 40px;
+   grid-template-columns: 160px 1fr 240px 30px;
    align-items: center;
    background-color: #f9f9fb;
    box-shadow: 1px 1px 10px 1px rgba(215, 218, 224, 0.848);
+   margin-top: 5px;
 }
 
 .CheckoutImage{
@@ -67,14 +68,22 @@
    font-size: 15px;
    border: 1px solid rgb(214, 215, 218);
    border-radius: 2px;
+   color: #305087;
 }
 
 .QuantityControls button{
     background-color:#f0f0f8;
-    font-size: 20px;
-    width: 25px;
+    font-size: 16px;
+    width: 20px;
     border: 1px solid rgb(237, 234, 234);
     cursor: pointer;
+    color: #305087;
+}
+
+.QuantityControls button:hover{
+    transform: scale(1.1);
+    border: 1px solid rgb(57, 65, 90);
+
 }
 
 .CheckoutButtonRemove{
@@ -89,7 +98,7 @@
 }
 .CheckoutButtonRemove:hover{
     color: #305087;
-    transform: scale(1.1);
+    transform: scale(1.02);
 }
 
 .checkoutPayContainer{

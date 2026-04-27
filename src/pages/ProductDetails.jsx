@@ -15,7 +15,9 @@ export default function ProductDetails() {
   const [product, setProduct] = useState(null)
   const navigate = useNavigate();
   const {addToCart, cartItems} = useCart()
- 
+
+  // Fetches the product based on the URL id.
+  // Redirects to home if the product does not exist.
   useEffect(() => {
 
     const foundProduct = getProductById(id);
@@ -27,7 +29,7 @@ export default function ProductDetails() {
 
     setProduct(foundProduct);
 
-  },[id]);
+  },[id, navigate]);
 
 
   if(!product){
@@ -39,11 +41,12 @@ export default function ProductDetails() {
 
   return (
    
-    <div className={styles.detailMainContainer}>
-      <div className={styles.detailContainer}>
+    <main className={styles.detailMainContainer}>
 
-        <div className={styles.detailContainerHero}>
+      <article className={styles.detailContainer}>
 
+        {/* Displays the main product information including image, name, price, and description */}
+        <section className={styles.detailContainerHero}>
           <div>
             <img src={product.image} alt={product.name} width={320}/>
           </div>
@@ -61,49 +64,44 @@ export default function ProductDetails() {
             </p>
 
           </div>
-
-        </div>
-
+        </section>
        
-
+        {/* Displays key product features such as battery, bluetooth, and audio */}
         <div className={styles.detailAllContentContainer}>
 
-         
-
-          
-
-          <div className={styles.detailTextBottomMidSectionContainer}>
-
-            <div className={styles.detailTextBottomMidSection}>
-              
-              <div className={styles.detailTextBottomMidSection}>
-                <LuBatteryFull size={29} color="rgb(59, 102, 181)" />{product.details.battery} 
-              </div>
-           
-              <div className={styles.detailTextBottomMidSection}>
-                  <FaBluetoothB size={23} color="rgb(59, 102, 181)" /> {product.details.bluetooth}
-              </div>
-              
-              <div className={styles.detailTextBottomMidSection}>
-                <LuVolume2 size={28} color="rgb(59, 102, 181)" /> {product.details.audio}
-              </div>
-              <div className={styles.detailTextBottomMidSection}>
-                {product.details.extra}
-              </div>
+          <section className={styles.productFeatures}>
+            <div className={styles.productFeatureItem}>
+              <LuBatteryFull className={styles.productFeatureIcon} />
+              <span>{product.details.battery}</span>
             </div>
 
-          </div>
+            <div className={styles.productFeatureItem}>
+              <FaBluetoothB className={styles.productFeatureIcon} />
+              <span>{product.details.bluetooth}</span>
+            </div>
 
-          <span  className={styles.detailTextContainerButton}>
+            <div className={styles.productFeatureItem}>
+              <LuVolume2 className={styles.productFeatureIcon} />
+              <span>{product.details.audio}</span>
+            </div>
+
+            <div className={styles.productFeatureItem}>
+              <span className={styles.productFeatureIconPlaceholder}></span>
+              <span>{product.details.extra}</span>
+            </div>
+          </section>
+
+          {/* Action buttons for adding the product to cart and navigating to checkout */}
+          <section  className={styles.detailTextContainerButton}>
             <button  className={styles.detailTextContainerButtonAdd}  onClick={() => addToCart(product.id)}><LuShoppingCart /> Add to cart {productQuantityLabel}</button>
             <button  className={styles.detailTextContainerButtonCart} onClick={() => navigate("/checkout")}>View cart</button>
-          </span>
+          </section>
 
           <div className={styles.detailTextbottomWarranty}>
               
-            <div className={styles.detailTextbottomWarrantyDiv}>              
+            <section className={styles.detailTextbottomWarrantyDiv}>              
              <LuShieldCheck size={24} color="rgb(59, 102, 181)" />  {product.shipping.warranty} 
-            </div> 
+            </section> 
 
             <div>
               <LuTruck size={24} color="rgb(59, 102, 181)" />  {product.shipping.freeShipping}
@@ -119,7 +117,8 @@ export default function ProductDetails() {
           
           </div>
 
-          <div  className={styles.detailTextbottomLoan}>
+          {/* Displays fake shipping information, warranty, and return policies */}
+          <section  className={styles.detailTextbottomLoan}>
             <h2>Buy now, pay later</h2>
             <br />
             <p><strong>789 SEK/month for 12 months</strong></p>
@@ -148,18 +147,18 @@ export default function ProductDetails() {
               Credit provider: Avida.
             </p>
             <br />
-            <p><strong><h2>⚠️ Credit warning</h2></strong></p>
+            <h2><strong>⚠️ Credit warning</strong></h2>
             <p>
               Borrowing costs money! If you are unable to repay your debt on time,
               you risk receiving a payment default notice. This may lead to difficulties
               renting housing, signing subscriptions, and obtaining new loans.
               For support, contact your municipality’s budget and debt counseling service.
             </p>
-          </div>
+          </section>
 
         </div>
-      </div>
-    </div>
+      </article>
+    </main>
   )
 }
 
