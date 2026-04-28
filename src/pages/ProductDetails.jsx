@@ -48,7 +48,7 @@ export default function ProductDetails() {
         {/* Displays the main product information including image, name, price, and description */}
         <section className={styles.detailContainerHero}>
           <div>
-            <img src={product.image} alt={product.name} width={320}/>
+            <img src={product.image} alt={product.name} width={400}/>
           </div>
 
           <div  className={styles.detailTexContent}>
@@ -57,9 +57,9 @@ export default function ProductDetails() {
 
             <h1>{product.name}</h1>
 
-            <p>
+            <p className={styles.detailTexContentDetails}>
               <em>{product.details.brand}</em> <br /> 
-              <strong>${product.price}</strong> <br /> <br />
+              <strong className={styles.detailTexContentPrice}>${product.price}</strong> <br /> <br />
               {product.description}
             </p>
 
@@ -98,23 +98,27 @@ export default function ProductDetails() {
           </section>
 
           <div className={styles.detailTextbottomWarranty}>
-              
-            <section className={styles.detailTextbottomWarrantyDiv}>              
-             <LuShieldCheck size={24} color="rgb(59, 102, 181)" />  {product.shipping.warranty} 
-            </section> 
 
-            <div>
-              <LuTruck size={24} color="rgb(59, 102, 181)" />  {product.shipping.freeShipping}
+            <div className={styles.warrantyRow}>
+              <LuShieldCheck size={24} color="rgb(59, 102, 181)" />
+              <span>{product.shipping.warranty}</span>
             </div>
 
-             <div>
-              <p> <FiShoppingBag size={24} color="rgb(59, 102, 181)" /> 30-day return policy</p>
+            <div className={styles.warrantyRow}>
+              <LuTruck size={24} color="rgb(59, 102, 181)" />
+              <span>{product.shipping.freeShipping}</span>
             </div>
 
-            <div>
-              <p> <FiUsers size={24} color="rgb(59, 102, 181)" />  50-day return policy for members</p>
+            <div className={styles.warrantyRow}>
+              <FiShoppingBag size={24} color="rgb(59, 102, 181)" />
+              <span>30-day return policy</span>
             </div>
-          
+
+            <div className={styles.warrantyRow}>
+              <FiUsers size={24} color="rgb(59, 102, 181)" />
+              <span>50-day return policy for members</span>
+            </div>
+
           </div>
 
           {/* Displays fake shipping information, warranty, and return policies */}

@@ -42,14 +42,14 @@
 }
 
 .HomeHeroSectionInfo h1{
-  font-size: 30px;
+  font-size: 40px;
   margin-bottom: 10px;
   color: #213557;
   font-weight: 800;
 }
 
 .HomeHeroSectionInfo p{
-  font-size: 17px;
+  font-size: 19px;
   color: #555;
 }
 
@@ -69,20 +69,21 @@
 .HomeProductsSection {
   width: 100%;
   box-sizing: border-box;
-  padding: 70px 80px;
+  padding: 70px 40px;
 }
 .HomeProducts {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 300px));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 30px;
-  max-width: 1400px;
+  max-width: 1600px;
   margin: 0 auto;
   justify-content: center;
 }
 
 .HomeProductsHead {
   grid-column: 1 / -1;
-  margin-bottom: 0;
+  margin-bottom: -30px;
+  margin-left: 7px;
   font-size: 32px;
   color: #213557;
 }

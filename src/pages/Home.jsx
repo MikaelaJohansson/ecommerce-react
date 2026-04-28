@@ -49,7 +49,6 @@ export default function Home() {
       <section className={styles.HomeProductsSection}>
         <div className={styles.HomeProducts}>
           <h2 className={styles.HomeProductsHead}>Products</h2>
-
           {products.map((product) => (
             <ProductCard product={product} key={product.id}/>           
           ))}
