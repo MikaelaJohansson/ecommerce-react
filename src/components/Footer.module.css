@@ -7,14 +7,13 @@
 
 .footerContent {
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
   background-color: white;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .footerBrand {
