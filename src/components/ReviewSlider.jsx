@@ -29,39 +29,54 @@ export default function ReviewSlider() {
 
       <h2>Customer Reviews</h2>
 
-      {/* Navigation controls for sliding through reviews */}
-      <section className={styles.ReviewControls}>
+      {/* Reviews */}
+      <div
+        className={`
+          ${styles.ReviewSliderCarusell}
+          flex flex-col items-center gap-6
+          md:flex-row md:justify-center md:items-center md:gap-6
+        `}
+      >
+        {visibleReviews.map((review) => (
+          <article
+            className={`
+              ${styles.ReviewCard}
+              w-full max-w-[320px]
+            `}
+            key={review.id}
+          >
 
-        <button onClick={handlePrev}>‹</button>
-
-        {/* Renders the currently visible reviews */}
-        <div className={styles.ReviewSliderCarusell}>
-          {/* Each review displays user info, rating, and feedback */}
-          {visibleReviews.map((review) => (
-            <article className={styles.ReviewCard} key={review.id}>
-
-              <div className={styles.ReviewHeader}>
-                <img
+            <div className={styles.ReviewHeader}>
+              <img
                 className={styles.ReviewImage}
                 src={review.image}
                 alt={review.name}
-                />
+              />
 
-                <div>
-                    <h3>{review.name}</h3>
-                    <p>{"⭐".repeat(review.rating)}</p>
-                </div>
+              <div>
+                <h3>{review.name}</h3>
+                <p>{"⭐".repeat(review.rating)}</p>
               </div>
+            </div>
 
-              <p>{review.text}</p>
+            <p>{review.text}</p>
 
-            </article>
-          ))}
-        </div>
+          </article>
+        ))}
+      </div>
 
-        <button onClick={handleNext}>›</button>
+      {/* Buttons (mobile) */}
+      <div className="flex gap-4 -mt-20 md:hidden">
+        <button className={styles.ReviewButton} onClick={handlePrev}>‹</button>
+        <button className={styles.ReviewButton} onClick={handleNext}>›</button>
+      </div>
 
-      </section>
+      {/* Buttons (desktop) */}
+      <div className="hidden md:flex justify-center gap-6 -mt-15">
+        <button className={styles.ReviewButton} onClick={handlePrev}>‹</button>
+        <button className={styles.ReviewButton} onClick={handleNext}>›</button>
+      </div>
+
     </section>
   )
 }

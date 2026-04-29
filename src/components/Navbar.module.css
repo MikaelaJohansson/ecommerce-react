@@ -1,49 +1,44 @@
-
-.navbarMainContainer{
+.navbarMainContainer {
   background-color: white;
-  padding: 30px;
+  padding: 24px 20px;
   position: relative;
   z-index: 20;
   box-shadow: 0 8px 24px rgba(165, 165, 165, 0.18);
 }
 
-.navbarContainer{
+.navbarContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.navbarLinkHome{
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 25px;
-  color: rgb(59, 59, 59);
-  margin-left: 10px;
-}
-
 .navbarLinks a {
-  padding: 20px;
+  padding: 8px 12px;
   position: relative;
   text-decoration: none;
   font-weight: 600;
-  font-size: 19px;
+  font-size: 20px;
   color: rgb(59, 59, 59);
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
-.navbarLinks a:hover{
-  color:  rgb(59, 102, 181);
+
+.navbarLinks a:hover {
+  color: rgb(59, 102, 181);
 }
 
 .navbarButton {
-  margin-left: 10px;
-  padding: 4px;
+  padding: 1px 8px;
   background: rgb(59, 102, 181);
   color: whitesmoke;
   border-radius: 3px;
   border: none;
 }
-.navbarButton:hover{
+
+.navbarButton:hover {
   background-color: rgb(45, 85, 160);
   cursor: pointer;
   transform: scale(1.03);
-
 }

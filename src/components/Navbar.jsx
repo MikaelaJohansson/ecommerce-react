@@ -27,8 +27,10 @@ export default function Navbar() {
   if (isAuthPage){
     return(
       <nav className={styles.navbarMainContainer}>
-        <div className={styles.navbarContainer}>
-          <Link to={"/"}><img src={logo} alt="ElectroShop logo" width={200} /></Link>
+        <div className="flex items-center justify-center md:justify-start">
+          <Link to={"/"}>
+            <img src={logo} alt="ElectroShop logo" width={200} />
+          </Link>
         </div>
       </nav>
     )
@@ -36,28 +38,38 @@ export default function Navbar() {
 
   return (
     <nav className={styles.navbarMainContainer}>
-      <div className={styles.navbarContainer}>
+      <div
+        className={`
+          ${styles.navbarContainer}
+          flex-col gap-5
+          md:flex-row md:gap-0
+        `}
+      >
 
-        <Link className={styles.navbarLinkHome} to="/"><img src={logo} alt="ElectroShop logo" width={200}/></Link>
+        <Link className={styles.navbarLinkHome} to="/">
+          <img src={logo} alt="ElectroShop logo" width={200}/>
+        </Link>
 
-        <div className={styles.navbarLinks}> 
-          <Link to="/">  <FaHome /> Home</Link>
+        <div className={`${styles.navbarLinks} flex justify-center`}>
+          <Link to="/"> <FaHome /> Home</Link>
           <Link to="/checkout"> <FaShoppingCart /> Cart</Link>
         </div>
 
         <div>
-
           { !user ? 
-            <div className={styles.navbarLinks}>
+            <div className={`${styles.navbarLinks} flex justify-center`}>
               <Link to="/auth">Login</Link> 
               <Link to="/auth">Signup</Link>
             </div> : (
-            <div>
-              <span> <FaUser /> Hello, {user.email} </span>
-              <button className={styles.navbarButton} onClick={handleLogout}>Logout</button> 
+            <div className="flex flex-col items-center gap-3 md:flex-row md:gap-2">
+              <span className="flex items-center gap-1">
+                <FaUser /> Hello, {user.email}
+              </span>
+              <button className={styles.navbarButton} onClick={handleLogout}>
+                Logout
+              </button> 
             </div>
           )}
-
         </div>
 
       </div>

@@ -1,46 +1,62 @@
-import { Link } from 'react-router-dom'
-import { useCart } from '../context/CartContext'
-import styles from "./ProductCard.module.css"
-import { LuShoppingCart, } from "react-icons/lu";
+import { Link } from "react-router-dom";
+import { useCart } from "../context/CartContext";
+import styles from "./ProductCard.module.css";
+import { LuShoppingCart } from "react-icons/lu";
 
+export default function ProductCard({ product }) {
+  const { addToCart, cartItems } = useCart();
 
-export default function ProductCard({product}) {
-
-  // Retrieves cart state and actions from context
-  const {addToCart, cartItems} = useCart()
-
-  // Checks if the current product already exists in the cart
-  const productInCart = cartItems.find((item) => item.id === product.id)
-
-  // Displays the quantity of the product if it exists in the cart
+  const productInCart = cartItems.find((item) => item.id === product.id);
   const productQuantityLabel = productInCart ? `(${productInCart.quantity})` : "";
 
- 
-
   return (
-    <article className={styles.ProductCardMainContainer}>
-
+    <article
+      className={`
+        ${styles.ProductCardMainContainer}
+        w-full max-w-[320px] mx-auto
+      `}
+    >
       <Link to={`/products/${product.id}`}>
-        <img src = {product.image} alt={product.name} width={250}/>
+        <img
+          className="w-full h-[260px] object-cover"
+          src={product.image}
+          alt={product.name}
+        />
       </Link>
 
-     
-      {/* Displays product name, price, and action buttons */}
       <div className={styles.productCardContent}>
-
         <h3>{product.name}</h3>
         <p>${product.price}</p>
 
-        {/* Provides navigation to product details and adds the product to the cart */}
-        <div className={styles.productCardButtons}>
-          <Link className={styles.productCardButtonsDetailView} to={`/products/${product.id}`}>
+        <div
+          className={`
+            ${styles.productCardButtons}
+            flex-col gap-3 px-3 
+            sm:flex-row sm:gap-2
+          `}
+        >
+          <Link
+            className={`
+              ${styles.productCardButtonsDetailView}
+              w-full sm:w-auto md:w-36 
+            `}
+            to={`/products/${product.id}`}
+          >
             View Details
           </Link>
-          <button className={styles.productCardButtonsAddToCart} onClick={() => addToCart(product.id)}> <LuShoppingCart className={styles.productInCartIcon} />Add to Cart {productQuantityLabel} </button>
+
+          <button
+            className={`
+              ${styles.productCardButtonsAddToCart}
+              w-full sm:w-auto md:w-36 
+            `}
+            onClick={() => addToCart(product.id)}
+          >
+            <LuShoppingCart className={styles.productInCartIcon} />
+            Add to Cart {productQuantityLabel}
+          </button>
         </div>
-
-      </div>           
-
+      </div>
     </article>
-  )
+  );
 }

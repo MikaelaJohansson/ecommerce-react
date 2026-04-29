@@ -41,9 +41,9 @@ export default function Auth() {
   return (
     <main className={styles.authMainContainer}>
       
-      <section className={styles.authContantContainer}>
+      <section className={`${styles.authContantContainer} w-full max-w-xs md:max-w-md`}>
 
-        <h1>{mode === "signup" ? "Sign up" : "Login"}</h1>
+        <h1 className={styles.authMainContainerHeader}>{mode === "signup" ? "Sign up" : "Login"}</h1>
 
         {/* Auth form with email and password validation */}
         <form className={styles.authForm} onSubmit={handleSubmit(onSubmit)}>

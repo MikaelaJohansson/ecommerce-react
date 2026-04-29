@@ -1,12 +1,10 @@
 import styles from "./ProductDetails.module.css";
-import ProductCard from '../components/ProductCard';
-import Checkout from "../pages/Checkout";
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { getProductById } from '../data/products';
 import { useCart } from '../context/CartContext';
-import { FaBluetoothB, } from "react-icons/fa";
-import { LuBatteryFull,LuVolume2,LuShoppingCart, LuShieldCheck,LuTruck } from "react-icons/lu";
+import { FaBluetoothB } from "react-icons/fa";
+import { LuBatteryFull, LuVolume2, LuShoppingCart, LuShieldCheck, LuTruck } from "react-icons/lu";
 import { FiShoppingBag, FiUsers } from "react-icons/fi";
 
 export default function ProductDetails() {
@@ -40,22 +38,45 @@ export default function ProductDetails() {
   const productQuantityLabel = productInCart ? `(${productInCart.quantity})` : "";
 
   return (
-   
     <main className={styles.detailMainContainer}>
 
-      <article className={styles.detailContainer}>
+      <article
+        className={`
+          ${styles.detailContainer}
+          w-full max-w-[900px]
+          mx-4 my-10
+          md:my-20
+        `}
+      >
 
         {/* Displays the main product information including image, name, price, and description */}
-        <section className={styles.detailContainerHero}>
+        <section
+          className={`
+            ${styles.detailContainerHero}
+            flex flex-col items-center text-center gap-8
+            md:flex-row md:text-left md:items-start
+          `}
+        >
           <div>
-            <img src={product.image} alt={product.name} width={400}/>
+            <img
+              className="w-full max-w-[280px] sm:max-w-[340px] md:max-w-[400px]"
+              src={product.image}
+              alt={product.name}
+            />
           </div>
 
-          <div  className={styles.detailTexContent}>
+          <div
+            className={`
+              ${styles.detailTexContent}
+              mx-0 md:mx-8
+            `}
+          >
 
             <p className={styles.detailTexContentNew}>New!</p>
 
-            <h1>{product.name}</h1>
+            <h1 className="text-[28px] sm:text-[32px] md:text-[35px]">
+              {product.name}
+            </h1>
 
             <p className={styles.detailTexContentDetails}>
               <em>{product.details.brand}</em> <br /> 
@@ -69,32 +90,69 @@ export default function ProductDetails() {
         {/* Displays key product features such as battery, bluetooth, and audio */}
         <div className={styles.detailAllContentContainer}>
 
-          <section className={styles.productFeatures}>
-            <div className={styles.productFeatureItem}>
+          <section
+            className={`
+              ${styles.productFeatures}
+              grid-cols-1
+              sm:grid-cols-2
+              lg:grid-cols-4
+              text-center
+              justify-items-center
+            `}
+          >
+            <div className={`${styles.productFeatureItem} justify-center`}>
               <LuBatteryFull className={styles.productFeatureIcon} />
               <span>{product.details.battery}</span>
             </div>
 
-            <div className={styles.productFeatureItem}>
+            <div className={`${styles.productFeatureItem} justify-center`}>
               <FaBluetoothB className={styles.productFeatureIcon} />
               <span>{product.details.bluetooth}</span>
             </div>
 
-            <div className={styles.productFeatureItem}>
+            <div className={`${styles.productFeatureItem} justify-center`}>
               <LuVolume2 className={styles.productFeatureIcon} />
               <span>{product.details.audio}</span>
             </div>
 
-            <div className={styles.productFeatureItem}>
+            <div className={`${styles.productFeatureItem} justify-center`}>
               <span className={styles.productFeatureIconPlaceholder}></span>
               <span>{product.details.extra}</span>
             </div>
           </section>
 
           {/* Action buttons for adding the product to cart and navigating to checkout */}
-          <section  className={styles.detailTextContainerButton}>
-            <button  className={styles.detailTextContainerButtonAdd}  onClick={() => addToCart(product.id)}><LuShoppingCart /> Add to cart {productQuantityLabel}</button>
-            <button  className={styles.detailTextContainerButtonCart} onClick={() => navigate("/checkout")}>View cart</button>
+          {/* Action buttons for adding the product to cart and navigating to checkout */}
+          <section
+            className={`
+              ${styles.detailTextContainerButton}
+              flex-col items-center gap-3
+              md:flex-row md:justify-center md:gap-4
+            `}
+          >
+            <button
+              className={`
+                ${styles.detailTextContainerButtonAdd}
+                w-[240px]
+                text-sm px-4 py-2
+                md:w-[320px] md:text-base md:px-6 md:py-3
+              `}
+              onClick={() => addToCart(product.id)}
+            >
+              <LuShoppingCart /> Add to cart {productQuantityLabel}
+            </button>
+
+            <button
+              className={`
+                ${styles.detailTextContainerButtonCart}
+                w-[240px]
+                text-sm px-4 py-2
+                md:w-[320px] md:text-base md:px-6 md:py-3
+              `}
+              onClick={() => navigate("/checkout")}
+            >
+              View cart
+            </button>
           </section>
 
           <div className={styles.detailTextbottomWarranty}>
@@ -122,7 +180,7 @@ export default function ProductDetails() {
           </div>
 
           {/* Displays fake shipping information, warranty, and return policies */}
-          <section  className={styles.detailTextbottomLoan}>
+          <section className={styles.detailTextbottomLoan}>
             <h2>Buy now, pay later</h2>
             <br />
             <p><strong>789 SEK/month for 12 months</strong></p>
@@ -165,5 +223,3 @@ export default function ProductDetails() {
     </main>
   )
 }
-
-
