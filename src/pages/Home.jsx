@@ -95,15 +95,14 @@ export default function Home() {
         <div
           className={`
             ${styles.HomeProducts}
-            grid
-            grid-cols-1
-            sm:grid-cols-2
-            lg:grid-cols-3
-            xl:grid-cols-4
-            2xl:grid-cols-5
-            gap-6
-            md:gap-8
-            pl-1 md:pl-2
+              grid
+              grid-cols-1
+              sm:grid-cols-2
+              lg:grid-cols-3
+              xl:grid-cols-4
+              gap-6
+              md:gap-8
+              pl-1 md:pl-2
           `}
         >
           <h2
