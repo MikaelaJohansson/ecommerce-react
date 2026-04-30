@@ -1,4 +1,4 @@
-🚀 Live Demo: https://your-app.netlify.app
+🚀 Live Demo: https://ecommerce-electroshop.netlify.app/
 
 # ElectroShop
 
