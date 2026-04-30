@@ -30,33 +30,32 @@ export default function ReviewSlider() {
       <h2>Customer Reviews</h2>
 
       {/* Reviews */}
-      <div
-        className={`
-          ${styles.ReviewSliderCarusell}
-          flex flex-col items-center gap-6
-          md:flex-row md:justify-center md:items-center md:gap-6
-        `}
-      >
+      <div className={` ${styles.ReviewSliderCarusell}
+        flex flex-col items-center gap-6
+        md:flex-row md:justify-center md:items-center md:gap-6 `}>
+          
         {visibleReviews.map((review) => (
           <article
             className={`
               ${styles.ReviewCard}
               w-full max-w-[320px]
             `}
-            key={review.id}
-          >
+            key={review.id}>
 
             <div className={styles.ReviewHeader}>
+
               <img
                 className={styles.ReviewImage}
                 src={review.image}
                 alt={review.name}
+                loading='lazy'
               />
 
               <div>
                 <h3>{review.name}</h3>
                 <p>{"⭐".repeat(review.rating)}</p>
               </div>
+
             </div>
 
             <p>{review.text}</p>

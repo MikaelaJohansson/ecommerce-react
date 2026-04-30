@@ -14,15 +14,12 @@ export default function Home() {
     <main className={styles.homeMainContainer}>
       
       {/* Hero section displaying featured content and promotional information */}
-      <section
-        className={`
-          ${styles.HomeHeroSection}
-          flex flex-col-reverse text-center
-          px-6 py-10 gap-8
-          md:flex-row-reverse md:text-left md:px-12 md:py-14
-          lg:px-20 lg:py-16 lg:gap-12
-        `}
-      >
+      <section className={`
+        ${styles.HomeHeroSection}
+        flex flex-col-reverse text-center
+        px-6 py-10 gap-8
+        md:flex-row-reverse md:text-left md:px-12 md:py-14
+        lg:px-20 lg:py-16 lg:gap-12`} >
 
         <img
           className={`
@@ -34,15 +31,13 @@ export default function Home() {
           `}
           src={smartwatch}
           alt="Smartwatch"
+          loading="lazy"
         />
 
-        <div
-          className={`
-            ${styles.HomeHeroSectionInfo}
-            max-w-sm
-            md:max-w-[500px]
-          `}
-        >
+        <div className={` ${styles.HomeHeroSectionInfo}
+          max-w-sm
+          md:max-w-[500px] `}>
+
           <p className={styles.eyebrow}>New arrivals in tech</p>
 
           <h1
@@ -85,26 +80,22 @@ export default function Home() {
 
       {/* Renders a list of product cards */}
       <section
-        className={`
-          ${styles.HomeProductsSection}
-          px-5 py-12
-          md:px-10 md:py-16
-          lg:px-10 lg:py-20
-        `}
-      >
-        <div
-          className={`
-            ${styles.HomeProducts}
-              grid
-              grid-cols-1
-              sm:grid-cols-2
-              lg:grid-cols-3
-              xl:grid-cols-4
-              gap-6
-              md:gap-8
-              pl-1 md:pl-2
-          `}
-        >
+
+        className={`${styles.HomeProductsSection}
+        px-5 py-12
+        md:px-10 md:py-16
+        lg:px-10 lg:py-20`}>
+
+        <div className={` ${styles.HomeProducts}
+          grid
+          grid-cols-1
+          sm:grid-cols-2
+          lg:grid-cols-3
+          xl:grid-cols-4
+          gap-6
+          md:gap-8
+          pl-1 md:pl-2 `} >
+            
           <h2
             className={`
               ${styles.HomeProductsHead}
@@ -120,6 +111,7 @@ export default function Home() {
             <ProductCard product={product} key={product.id} />
           ))}
         </div>
+        
       </section>
 
       {/* Displays customer reviews in a slider */}

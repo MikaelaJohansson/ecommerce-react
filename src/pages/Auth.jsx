@@ -47,13 +47,17 @@ export default function Auth() {
 
         {/* Auth form with email and password validation */}
         <form className={styles.authForm} onSubmit={handleSubmit(onSubmit)}>
+
           {error && <div className={styles.error}>{error}</div>}
+
           <div>
             <label htmlFor='email' >Email</label> <br /> 
             <input type="email" id='email' {...register("email",{required:"Email is required"})} />
             {errors.email && <span className={styles.error}>{errors.email.message}</span>}
           </div>
+
           <br />
+
           <div>
             <label htmlFor='password'>Password</label> <br />
             <input 
@@ -71,7 +75,9 @@ export default function Auth() {
             />
             {errors.password && <span className={styles.error}>{errors.password.message}</span>}
           </div>
+
           <br />
+          
           <button className={styles.authButton} type='submit'>{mode === "signup" ? "Sign up" : "Login"}</button>
 
         </form>

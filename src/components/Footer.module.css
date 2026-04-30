@@ -14,13 +14,6 @@
   padding-right: 20px;
 }
 
-.footerBrand {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  flex: 1 1 260px;
-}
-
 .footerLogo {
   width: 180px;
   height: auto;
@@ -34,15 +27,12 @@
 
 }
 
-.footerColumn {
-  min-width: 140px;
+.footerContainerContent{
+  font-size: 16px;
 }
 
-.footerColumn h4 {
-  margin-bottom: 12px;
-}
-
-.footerColumn p {
-  margin-bottom: 8px;
-  color: rgb(70, 70, 70);
+.footerContainerContent h4{
+  font-size: 20px;
+  font-weight: 900;
+  color: rgb(25, 25, 25);
 }

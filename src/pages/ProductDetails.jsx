@@ -45,32 +45,26 @@ export default function ProductDetails() {
           ${styles.detailContainer}
           w-full max-w-[900px]
           mx-4 my-10
-          md:my-20
-        `}
-      >
+          md:my-20 `} >
 
         {/* Displays the main product information including image, name, price, and description */}
-        <section
-          className={`
-            ${styles.detailContainerHero}
-            flex flex-col items-center text-center gap-8
-            md:flex-row md:text-left md:items-start
-          `}
-        >
+        <section className={` ${styles.detailContainerHero}
+          flex flex-col items-center text-center gap-8
+          md:flex-row md:text-left md:items-start`}>
+
           <div>
             <img
               className="w-full max-w-[280px] sm:max-w-[340px] md:max-w-[400px]"
               src={product.image}
               alt={product.name}
+              loading="lazy"
             />
           </div>
 
           <div
             className={`
               ${styles.detailTexContent}
-              mx-0 md:mx-8
-            `}
-          >
+              mx-0 md:mx-8 `} >
 
             <p className={styles.detailTexContentNew}>New!</p>
 
@@ -85,6 +79,7 @@ export default function ProductDetails() {
             </p>
 
           </div>
+
         </section>
        
         {/* Displays key product features such as battery, bluetooth, and audio */}
@@ -121,7 +116,6 @@ export default function ProductDetails() {
             </div>
           </section>
 
-          {/* Action buttons for adding the product to cart and navigating to checkout */}
           {/* Action buttons for adding the product to cart and navigating to checkout */}
           <section
             className={`

@@ -21,13 +21,10 @@ export default function Checkout() {
 
   return (
     <main className={styles.CheckoutMainContainer}>
-      <div
-        className={`
-          ${styles.CheckoutContainer}
-          px-4
-          md:px-8
-        `}
-      >
+      <div className={` ${styles.CheckoutContainer}
+        px-4
+        md:px-8 `}>
+
         <h1>Shopping Cart</h1>
 
         {/* Renders all items currently in the shopping cart */}
@@ -40,8 +37,7 @@ export default function Checkout() {
                 ${styles.CheckoutProductsInCart}
                 grid-cols-1 text-center gap-4 p-4
                 md:grid-cols-[160px_1fr_240px] md:text-left md:gap-0
-              `}
-            >
+              `} >
               
               <img
                 className={`
@@ -51,6 +47,7 @@ export default function Checkout() {
                 `}
                 src={item.product.image}
                 alt={item.product.name}
+                loading="lazy"
               />
 
               <div className={styles.CheckoutProductName}>
@@ -58,13 +55,10 @@ export default function Checkout() {
                 <p>${item.product.price} each</p>
               </div>
 
-              <div
-                className={`
-                  ${styles.CheckoutActions}
-                  flex-col items-center gap-3
-                  md:flex-row md:items-center md:gap-5
-                `}
-              >
+              <div className={` ${styles.CheckoutActions}
+                flex-col items-center gap-3
+                md:flex-row md:items-center md:gap-5 `} >
+
                 <p>${(item.product.price * item.quantity).toFixed(2)}</p>
 
                 {/* Allows users to increase or decrease product quantity */}
@@ -78,19 +72,18 @@ export default function Checkout() {
                   Remove
                 </button>
               </div>
+
             </article>
           ))}
         </section>
 
         {/* Displays order summary including subtotal, shipping, and total */}
-        <section
-          className={`
-            ${styles.checkoutPayContainer}
-            items-center mr-0
-            md:items-end md:mr-10
-          `}
-        >
+        <section className={` ${styles.checkoutPayContainer}
+          items-center mr-0
+          md:items-end md:mr-10 `} >
+
           <div className={styles.checkoutSummary}>
+
             <div className={styles.checkoutRow}>
               <p>Subtotal:</p>
               <p>${total.toFixed(2)}</p>
@@ -106,31 +99,24 @@ export default function Checkout() {
               <p>${total.toFixed(2)}</p>
             </div>
           </div>
+
         </section>
 
         {/* Navigation and order actions */}
-        <div
-          className={`
-            ${styles.checkoutButtonCheckoutContainer}
-            flex-col items-center gap-3 px-0
-            md:flex-row md:gap-8 md:px-10
-          `}
-        >
+        <div className={` ${styles.checkoutButtonCheckoutContainer}
+          flex-col items-center gap-3 px-0
+          md:flex-row md:gap-8 md:px-10 `} >
 
-          <button
-            className={`
-              ${styles.checkoutButtonContinueShopping}
-              w-full max-w-[280px] text-sm px-4 py-2
-              md:max-w-[400px] md:text-base
+          <button className={` ${styles.checkoutButtonContinueShopping}
+            w-full max-w-[280px] text-sm px-4 py-2
+            md:max-w-[400px] md:text-base
             `}
             onClick={() => navigate("/")}
           >
             Continue Shopping
           </button>
 
-          <button
-            className={`
-              ${styles.checkoutButtonPlaceOreder}
+          <button className={` ${styles.checkoutButtonPlaceOreder}
               w-full max-w-[280px] text-sm px-4 py-2
               md:max-w-[400px] md:text-base
             `}

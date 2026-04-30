@@ -29,7 +29,7 @@ export default function Navbar() {
       <nav className={styles.navbarMainContainer}>
         <div className="flex items-center justify-center md:justify-start">
           <Link to={"/"}>
-            <img src={logo} alt="ElectroShop logo" width={200} />
+            <img src={logo} alt="ElectroShop logo" width={200} loading='lazy'/>
           </Link>
         </div>
       </nav>
@@ -38,16 +38,13 @@ export default function Navbar() {
 
   return (
     <nav className={styles.navbarMainContainer}>
-      <div
-        className={`
-          ${styles.navbarContainer}
-          flex-col gap-5
-          md:flex-row md:gap-0
-        `}
-      >
+
+      <div className={` ${styles.navbarContainer}
+        flex-col gap-5
+        md:flex-row md:gap-0 `}>
 
         <Link className={styles.navbarLinkHome} to="/">
-          <img src={logo} alt="ElectroShop logo" width={200}/>
+          <img src={logo} alt="ElectroShop logo" width={200} loading='lazy'/>
         </Link>
 
         <div className={`${styles.navbarLinks} flex justify-center`}>
